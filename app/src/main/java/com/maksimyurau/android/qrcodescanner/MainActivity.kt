@@ -26,12 +26,12 @@ class MainActivity : AppCompatActivity() {
         if (result != null) {
             AlertDialog.Builder(this)
                 .setMessage("Would you like to go to ${result.contents}?")
-                .setPositiveButton(resources.getString(R.string.yes)) { _, i ->
+                .setPositiveButton(resources.getString(R.string.yes)) { _, _ ->
                     val intent = Intent(Intent.ACTION_WEB_SEARCH)
                     intent.putExtra(SearchManager.QUERY, result.contents)
                     startActivity(intent)
                 }
-                .setNegativeButton(resources.getString(R.string.no)) { _, i -> }
+                .setNegativeButton(resources.getString(R.string.no)) { _, _ -> }
                 .create()
                 .show()
         }
